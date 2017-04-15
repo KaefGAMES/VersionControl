@@ -1,2 +1,2 @@
 # VersionControl
-Just a simple repo for yaml stuff :) @loivado works here
+Simple Repo for YAML TerrainControl - Minecraft World Generator @loivado works here
