@@ -1,4 +1,4 @@
-# This is the biome config file of the Birch Forest Hills biome, which is one of the vanilla biomes.
+# This is the biome config file of the Mega Spruce Taiga Hills biome, which is one of the vanilla biomes.
 
 #######################################################################
 # +-----------------------------------------------------------------+ #
@@ -39,11 +39,11 @@ BiomeSize: 4
 #   50 rarity mean 1/11 chance than other
 # For isle biomes see the BiomeRarityWhenIsle setting below.
 # Doesn`t work on Ocean and River (frozen versions too) biomes when not added as normal biome.
-BiomeRarity: 100
+BiomeRarity: 10
 
 # The hexadecimal color value of this biome. Used in the output of the /tc map command,
 # and used in the input of BiomeMode: FromImage.
-BiomeColor: #1F5F32
+BiomeColor: #475141
 
 # (ReplaceToBiomeName is only available in custom biomes.)
 
@@ -56,7 +56,7 @@ BiomeColor: #1F5F32
 
 # List of biomes in which this biome will spawn as an isle.
 # For example, Mushroom Isles spawn inside the Ocean biome.
-IsleInBiome: Birch Forest
+IsleInBiome: Mega Spruce Taiga
 
 # Size of this biome when spawned as an ilse biome.
 # Valid values range from 0 to GenerationDepth.
@@ -99,10 +99,10 @@ BiomeSizeWhenBorder: 8
 # BiomeHeight mean how much height will be added in terrain generation
 # It is double value from -10.0 to 10.0
 # Value 0.0 equivalent half of map height with all other default settings
-BiomeHeight: 0.45
+BiomeHeight: 0.2
 
 # Biome volatility.
-BiomeVolatility: 0.3
+BiomeVolatility: 0.2
 
 # Smooth radius between biomes. Must be between 0 and 32, inclusive. The resulting
 # smooth radius seems to be  (thisSmoothRadius + 1 + smoothRadiusOfBiomeOnOtherSide) * 4 .
@@ -206,7 +206,7 @@ GroundBlock: DIRT
 
 # Alternatively, you can use Mesa, MesaForest or MesaBryce to get blocks
 # like the blocks found in the Mesa biomes.
-SurfaceAndGroundControl: 
+SurfaceAndGroundControl: DIRT:2, DIRT, -0.95, DIRT:1, DIRT, 1.75 
 
 # Replace Variable: (blockFrom,blockTo[:blockDataTo][,minHeight,maxHeight])
 # Example :
@@ -246,11 +246,11 @@ CooledLavaBlock: STATIONARY_LAVA
 # Most of the settings here only have an effect on players with the client version of Terrain Control installed.
 # Biome temperature. Float value from 0.0 to 2.0.
 # On default biomes, this won't do anything except changing the grass and leaves colors slightly.
-BiomeTemperature: 0.6
+BiomeTemperature: 0.25
 
 # Biome wetness. Float value from 0.0 to 1.0.
 # On default biomes, this won't do anything except changing the grass and leaves colors slightly.
-BiomeWetness: 0.6
+BiomeWetness: 0.8
 
 # Biome sky color.
 SkyColor: #7BA5FF
@@ -356,17 +356,15 @@ UnderWaterOre(SAND,7,3,100.0,DIRT,GRASS)
 UnderWaterOre(CLAY,4,1,100.0,DIRT,CLAY)
 UnderWaterOre(GRAVEL,6,1,100.0,DIRT,GRASS)
 Dungeon(8,100.0,0,128)
-Tree(10,Birch,80)
-Grass(Tallgrass,NotGrouped,30,100.0,GRASS,DIRT)
-Plant(Poppy,4,100.0,0,128,GRASS,DIRT)
+Boulder(MOSSY_COBBLESTONE,2,30.0,0,256,GRASS,DIRT,STONE)
+Tree(10,HugeTaiga2,8,HugeTaiga1,30,Taiga1,33,Taiga2,100)
+Grass(Fern,NotGrouped,80,100.0,GRASS,DIRT)
+Grass(Tallgrass,NotGrouped,16,100.0,GRASS,DIRT)
 Plant(Dandelion,2,100.0,0,128,GRASS,DIRT)
-Plant(Lilac,2,100.0,0,128,GRASS,DIRT)
-Plant(RoseBush,2,100.0,0,128,GRASS,DIRT)
-Plant(Peony,2,100.0,0,128,GRASS,DIRT)
-Plant(RedMushroom,1,12.0,0,128,GRASS,DIRT)
-Plant(BrownMushroom,1,25.0,0,128,GRASS,DIRT)
+Plant(RedMushroom,8,12.0,0,128,GRASS,DIRT)
+Plant(BrownMushroom,8,25.0,0,128,GRASS,DIRT)
+Plant(LargeFern,60,90.0,30,128,GRASS,DIRT)
 Plant(PUMPKIN,1,3.0,0,128,GRASS)
-Reed(SUGAR_CANE_BLOCK,3,100.0,0,128,GRASS,DIRT,SAND)
 CustomObject(UseWorld)
 
 #######################################################################
@@ -440,7 +438,7 @@ RareBuildingType: disabled
 SpawnMonsters: [{"mob": "Spider", "weight": 100, "min": 4, "max": 4}, {"mob": "Zombie", "weight": 100, "min": 4, "max": 4}, {"mob": "Skeleton", "weight": 100, "min": 4, "max": 4}, {"mob": "Creeper", "weight": 100, "min": 4, "max": 4}, {"mob": "Slime", "weight": 100, "min": 4, "max": 4}, {"mob": "Enderman", "weight": 10, "min": 1, "max": 4}, {"mob": "Witch", "weight": 5, "min": 1, "max": 1}]
 
 # The friendly creatures (cows, pigs, etc.) that spawn in this biome
-SpawnCreatures: [{"mob": "Sheep", "weight": 12, "min": 4, "max": 4}, {"mob": "Pig", "weight": 10, "min": 4, "max": 4}, {"mob": "Chicken", "weight": 10, "min": 4, "max": 4}, {"mob": "Cow", "weight": 8, "min": 4, "max": 4}]
+SpawnCreatures: [{"mob": "Sheep", "weight": 12, "min": 4, "max": 4}, {"mob": "Pig", "weight": 10, "min": 4, "max": 4}, {"mob": "Chicken", "weight": 10, "min": 4, "max": 4}, {"mob": "Cow", "weight": 8, "min": 4, "max": 4}, {"mob": "Wolf", "weight": 8, "min": 4, "max": 4}, {"mob": "Rabbit", "weight": 4, "min": 2, "max": 3}]
 
 # The water creatures (only squids in vanilla) that spawn in this biome
 SpawnWaterCreatures: [{"mob": "Squid", "weight": 10, "min": 4, "max": 4}]

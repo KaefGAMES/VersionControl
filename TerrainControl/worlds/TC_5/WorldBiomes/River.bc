@@ -1,4 +1,4 @@
-# This is the biome config file of the Birch Forest Hills biome, which is one of the vanilla biomes.
+# This is the biome config file of the River biome, which is one of the vanilla biomes.
 
 #######################################################################
 # +-----------------------------------------------------------------+ #
@@ -31,7 +31,7 @@ ResourceInheritance: true
 # Isle biomes:   BiomeSizeWhenIsle (see below)
 # Border biomes: BiomeSizeWhenBorder (see below)
 # River biomes:  RiverSize (see WorldConfig)
-BiomeSize: 4
+BiomeSize: 8
 
 # Biome rarity from 100 to 1. If this is normal or ice biome - chance for spawn this biome then others.
 # Example for normal biome :
@@ -39,11 +39,11 @@ BiomeSize: 4
 #   50 rarity mean 1/11 chance than other
 # For isle biomes see the BiomeRarityWhenIsle setting below.
 # Doesn`t work on Ocean and River (frozen versions too) biomes when not added as normal biome.
-BiomeRarity: 100
+BiomeRarity: 95
 
 # The hexadecimal color value of this biome. Used in the output of the /tc map command,
 # and used in the input of BiomeMode: FromImage.
-BiomeColor: #1F5F32
+BiomeColor: #0000FF
 
 # (ReplaceToBiomeName is only available in custom biomes.)
 
@@ -56,16 +56,16 @@ BiomeColor: #1F5F32
 
 # List of biomes in which this biome will spawn as an isle.
 # For example, Mushroom Isles spawn inside the Ocean biome.
-IsleInBiome: Birch Forest
+IsleInBiome: Swampland
 
 # Size of this biome when spawned as an ilse biome.
 # Valid values range from 0 to GenerationDepth.
 # Larger numbers give *smaller* islands. The biome must be smaller than the biome it's going
 # to spawn in, so the BiomeSizeWhenIsle number must be larger than the BiomeSize of the other biome.
-BiomeSizeWhenIsle: 6
+BiomeSizeWhenIsle: 8
 
 # Rarity of this biome when spawned as an ilse biome.
-BiomeRarityWhenIsle: 97
+BiomeRarityWhenIsle: 95
 
 ######################
 # Border biomes only #
@@ -99,10 +99,10 @@ BiomeSizeWhenBorder: 8
 # BiomeHeight mean how much height will be added in terrain generation
 # It is double value from -10.0 to 10.0
 # Value 0.0 equivalent half of map height with all other default settings
-BiomeHeight: 0.45
+BiomeHeight: -0.5
 
 # Biome volatility.
-BiomeVolatility: 0.3
+BiomeVolatility: 0.0
 
 # Smooth radius between biomes. Must be between 0 and 32, inclusive. The resulting
 # smooth radius seems to be  (thisSmoothRadius + 1 + smoothRadiusOfBiomeOnOtherSide) * 4 .
@@ -246,11 +246,11 @@ CooledLavaBlock: STATIONARY_LAVA
 # Most of the settings here only have an effect on players with the client version of Terrain Control installed.
 # Biome temperature. Float value from 0.0 to 2.0.
 # On default biomes, this won't do anything except changing the grass and leaves colors slightly.
-BiomeTemperature: 0.6
+BiomeTemperature: 0.5
 
 # Biome wetness. Float value from 0.0 to 1.0.
 # On default biomes, this won't do anything except changing the grass and leaves colors slightly.
-BiomeWetness: 0.6
+BiomeWetness: 0.5
 
 # Biome sky color.
 SkyColor: #7BA5FF
@@ -336,38 +336,27 @@ FoliageColorIsMultiplier: true
 # Vein resource: not in vanilla. Starts an area where ores will spawn. Can be slow, so use a low Rarity (smaller than 1).
 # CustomStructure resource: starts a BO3 structure in the chunk.
 
-Ore(DIRT,33,10,100.0,0,256,STONE)
-Ore(GRAVEL,33,8,100.0,0,256,STONE)
-Ore(STONE:1,33,10,100.0,0,80,STONE)
-Ore(STONE:3,33,10,100.0,0,80,STONE)
-Ore(STONE:5,33,10,100.0,0,80,STONE)
+SmallLake(WATER,4,7.0,8,120)
+SmallLake(LAVA,2,1.0,8,120)
+UnderGroundLake(25,60,2,5.0,0,50)
+Dungeon(8,100.0,0,256)
+Ore(DIRT,32,20,100.0,0,256,STONE)
+Ore(GRAVEL,32,10,100.0,0,256,STONE)
 Ore(COAL_ORE,12,20,50,0,128,STONE) #name,size,freq,rarity,minAT,maxAT,source,source  
 Ore(IRON_ORE,8,20,22.5,0,64,STONE)
 Ore(GOLD_ORE,8,2,30.0,0,32,STONE)
 Ore(REDSTONE_ORE,7,8,7.5,0,16,STONE)
 Ore(DIAMOND_ORE,7,1,30.0,0,16,STONE)
 Ore(LAPIS_ORE,7,1,30.0,0,16,STONE)
-UnderGroundLake(25,60,2,5.0,0,50)
-Liquid(WATER,20,100.0,8,128,STONE)
-Liquid(LAVA,10,100.0,8,128,STONE)
-SmallLake(WATER,4,7.0,8,120)
-SmallLake(LAVA,2,1.0,8,120)
-UnderWaterOre(SAND,7,3,100.0,DIRT,GRASS)
+UnderWaterOre(SAND,7,4,100.0,DIRT,GRASS)
 UnderWaterOre(CLAY,4,1,100.0,DIRT,CLAY)
-UnderWaterOre(GRAVEL,6,1,100.0,DIRT,GRASS)
-Dungeon(8,100.0,0,128)
-Tree(10,Birch,80)
-Grass(Tallgrass,NotGrouped,30,100.0,GRASS,DIRT)
-Plant(Poppy,4,100.0,0,128,GRASS,DIRT)
-Plant(Dandelion,2,100.0,0,128,GRASS,DIRT)
-Plant(Lilac,2,100.0,0,128,GRASS,DIRT)
-Plant(RoseBush,2,100.0,0,128,GRASS,DIRT)
-Plant(Peony,2,100.0,0,128,GRASS,DIRT)
-Plant(RedMushroom,1,12.0,0,128,GRASS,DIRT)
-Plant(BrownMushroom,1,25.0,0,128,GRASS,DIRT)
-Plant(PUMPKIN,1,3.0,0,128,GRASS)
-Reed(SUGAR_CANE_BLOCK,3,100.0,0,128,GRASS,DIRT,SAND)
 CustomObject(UseWorld)
+Tree(1,BigTree,1,Tree,9)
+Plant(Dandelion,2,100.0,0,256,GRASS,DIRT)
+Grass(Tallgrass,NotGrouped,10,100.0,GRASS,DIRT)
+Plant(PUMPKIN,1,3.0,0,256,GRASS)
+Liquid(WATER,20,100.0,8,256,STONE)
+Liquid(LAVA,10,100.0,8,256,STONE)
 
 #######################################################################
 # +-----------------------------------------------------------------+ #
@@ -408,10 +397,10 @@ BiomeObjects:
 # regardless of these settings.
 # Disables strongholds for this biome. If there is no suitable biome nearby,
 # Minecraft will ignore this setting.
-StrongholdsEnabled: true
+StrongholdsEnabled: false
 
 # Whether an Ocean Monument can be placed in this biome.
-OceanMonumentsEnabled: false
+OceanMonumentsEnabled: true
 
 # Whether a Nether Fortress can start in this biome. Might extend to neighbor biomes.
 NetherFortressesEnabled: true
@@ -440,7 +429,7 @@ RareBuildingType: disabled
 SpawnMonsters: [{"mob": "Spider", "weight": 100, "min": 4, "max": 4}, {"mob": "Zombie", "weight": 100, "min": 4, "max": 4}, {"mob": "Skeleton", "weight": 100, "min": 4, "max": 4}, {"mob": "Creeper", "weight": 100, "min": 4, "max": 4}, {"mob": "Slime", "weight": 100, "min": 4, "max": 4}, {"mob": "Enderman", "weight": 10, "min": 1, "max": 4}, {"mob": "Witch", "weight": 5, "min": 1, "max": 1}]
 
 # The friendly creatures (cows, pigs, etc.) that spawn in this biome
-SpawnCreatures: [{"mob": "Sheep", "weight": 12, "min": 4, "max": 4}, {"mob": "Pig", "weight": 10, "min": 4, "max": 4}, {"mob": "Chicken", "weight": 10, "min": 4, "max": 4}, {"mob": "Cow", "weight": 8, "min": 4, "max": 4}]
+SpawnCreatures: []
 
 # The water creatures (only squids in vanilla) that spawn in this biome
 SpawnWaterCreatures: [{"mob": "Squid", "weight": 10, "min": 4, "max": 4}]
